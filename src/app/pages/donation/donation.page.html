@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Donation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="ion-padding">
+    <h3>Show your support for more and updated content!</h3>
+
+  </div>
+
+  <div id="paypal">
+
+    <ion-button (click)="paypal()">
+      Donate via PayPal
+    </ion-button>
+  </div>
+
+  <div id="paynow">
+    <img src="../../../assets/paynow.PNG">
+    <p>For Singapore based Paynow users</p>
+    <p>Thank you for your support!</p>
+  </div>
+</ion-content>

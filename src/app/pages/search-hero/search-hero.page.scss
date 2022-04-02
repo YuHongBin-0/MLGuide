@@ -1,0 +1,57 @@
+ion-avatar {
+    width: 50px;
+    height: 50px;
+    // border-style: groove;
+    // border-width: 1px;
+    // border-color: goldenrod;
+   
+}
+
+ion-item {
+    padding: 5px 0 0px 0;
+    --background: transparent;
+}
+
+ion-list {
+    background: transparent;
+
+}
+
+ion-back-button{
+    color: #CABD24;
+}
+
+
+h2 {
+    color: rgb(255, 218, 11);
+    padding-bottom: 5px;
+    font-weight: 350;
+}
+
+.item-inner-highlight {
+    color: blue;
+}
+
+.input-wrapper {
+    padding-bottom: 5px;
+}
+
+ion-searchbar {
+    --color: #999999;
+    // text-align: center;  bad practice
+}
+
+h4 {
+    color: #999999;
+    padding: 0;
+ 
+}
+
+#empty {
+    display: flex;
+    justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    height: 100%;
+    
+}

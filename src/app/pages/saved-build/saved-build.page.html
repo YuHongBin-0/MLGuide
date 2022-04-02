@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Saved Build</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div style="position: relative; height: 100%; width:100%" *ngIf="!avail">
+    <div class="center">
+      <div style="display: block; text-align: center;">
+        <img style="width: 100px; background-color: #b9b9b9; " src="../../assets/heroEmpty.png">
+        <!-- https://www.nicepng.com/png/full/57-574971_masks-clipart-plain-blank-mask-template.png -->
+        <p style="color: #b9b9b9;">Your build will be saved here!</p>
+      </div>
+    </div>
+  </div>
+
+
+  <ion-list >
+    <ion-item-sliding *ngFor="let i of saveBuild" >
+      <ion-item (click)="openDetailsWithState(i)">
+        <ion-label>
+          {{i.name}}
+        </ion-label>
+        <p>{{i.date}}</p>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="delete(i)">
+          <ion-icon slot="icon-only" name="trash" style="color: #ffffff;"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+
+  
+</ion-content>

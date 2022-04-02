@@ -1,0 +1,169 @@
+ion-back-button {
+    color: #CABD24;
+}
+
+
+ion-progress-bar {
+    margin-top: 8.5px;
+}
+
+.slides {
+    width: 100%;
+}
+
+.poster {
+    height: 100%;
+    width: 100%;
+    display: block;
+
+}
+
+#strategy .card {
+    padding-bottom: 1em;
+}
+
+#p-padd p {
+    padding: 2px 0 2px 0;
+}
+
+.strategy {
+    margin: 0 10px 0em 10px;
+}
+
+.emblem {
+    height: 75px;
+    width: 75px;
+}
+
+
+#segment {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+#icon {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+ion-icon {
+    color: #CABD24;
+}
+
+.card {
+    color: rgb(190, 189, 189);
+    margin: 1em 0 0em 0;
+    background-color: #272424;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+ion-card-subtitle {
+    color: rgb(190, 189, 189);
+}
+
+mat-expansion-panel {
+    margin-top: 1em;
+    background-color: #272424;
+}
+
+mat-panel-title {
+    color: rgb(190, 189, 189);
+}
+
+mat-expansion-panel-header {
+    background-color: #272424;
+}
+
+ion-avatar {
+    height: 75px;
+    width: 75px;
+    display: block;
+    margin: 0 auto;
+}
+
+.counter-col {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+// #parallax {
+//     height: 200px;
+//     width: 100% !important;
+//     background-attachment: fixed;
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//     background-image: url('https://firebasestorage.googleapis.com/v0/b/mlguide-ad541.appspot.com/o/heroposter%2Fhero01%20-%20miya.jpg?alt=media&token=b714f6be-a672-44c1-9dba-6db5362cf79f');
+// }
+
+.left {
+    text-align: left;
+}
+
+#video-play {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+#pass-skill {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.str-against {
+    border-width: 2px;
+    border-style: solid;
+    border-color: green;
+}
+
+.wk-against {
+    border-width: 2px;
+    border-style: solid;
+    border-color: red;
+}
+
+ion-row {
+    justify-content: center
+}
+
+#str-name {
+    font-weight: 300;
+    margin: 0;
+    font-size: 14px;
+}
+
+#wk-name {
+    font-weight: 300;
+    margin: 0;
+    font-size: 14px;
+}
+
+.small-icon {
+    width: 40px; 
+    height: 40px;
+    margin-left: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+
+ 
+}
+
+#skills-right {
+    position: absolute;
+    right: 0;
+    display: flex;
+    
+    p {
+        font-weight: 500;
+    }
+}
+
+iframe {
+    margin-top: 5px;
+}

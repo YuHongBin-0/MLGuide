@@ -1,0 +1,40 @@
+https://www.djamware.com/post/5b74e54f80aca74669894413/ionic-4-and-angular-6-tutorial-firebase-realtime-crud-mobile-app
+https://devdactic.com/ionic-4-firebase-angularfire-2/
+https://srpdqi.axshare.com/#id=bq8906&p=page_2_3 (hb UI design flow)
+https://gist.github.com/mdorchain/90ee6a0b391b6c51b2e27c2b000f9bdd
+https://stackblitz.com/edit/ion-segment?file=pages/home/home.html (segment swip)
+
+https://codepen.io/ionic/pen/uJkCz?__cf_chl_jschl_tk__=13411d2fc3d6de2b82b70b3eaf134a52c95c3d28-1582641492-0-AaSiqs5XqvdsccWwqY1hqTAijlIAYWEL-l2Rj8YjeXm49i8fjyv5C2hsFqRDhGjY3VIohtUdHQEQsrpuYpfS1cxSNvo7CN3EFfdsvBWjMHmpX2fCcSHEEy3coG7G3iOas87OpJL-LdEttdxZuVHDNGvHMQBS3WsuMGlTdtGREulwhxHh2KCqW9QZf1U2uV4a1eqHRzZiEIrwQGhmF6n3RUTrJH5l92QqLFMD8KT9lJPtRQHKIj9-2y7WAoSQ1G6PobrJ9TKvkXiocbA416xswQ61h7cqYiEcRuhLB47uTIXpfO_tA8tV0hu2lW1AMGXtFkwA2156udk4YgYS5qse8-fQhEUcskMXBY-vPOZh-rIQ
+
+https://github.com/angular/angular/issues/15427
+
+https://www.npmjs.com/package/@angular/animations/v/8.2.13
+
+https://www.joshmorony.com/prevent-access-to-pages-in-ionic-with-angular-route-guards/
+
+https://fireship.io/lessons/ionic4-intro-slides-tutorial-to-educate-app-users/
+
+https://stackoverflow.com/questions/44587540/in-ionic-3-ionic-cordova-run-android-and-ionic-cordova-build-android-give
+
+https://stackoverflow.com/questions/38845579/adb-socket-not-working-and-daemon
+
+https://www.javascripttuts.com/the-complete-guide-to-animations-with-ionic/
+
+https://ionicacademy.com/store-data-inside-ionic/
+
+https://www.javatpoint.com/ionic-vs-phonegap
+
+https://github.com/zyra/ionic-super-tabs-example/blob/master/src/app/home/home.page.ts
+
+https://www.freakyjolly.com/ionic-grid-tutorial-by-example/
+
+
+
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore ./platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk alias_name
+C:\Users\fitzg\AppData\Local\Android\Sdk\build-tools\28.0.3\zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk MLGuide1.apk
+
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore ./platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk alias_name
+
+C:\Users\fitzg\AppData\Local\Android\Sdk\build-tools\28.0.3\zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk MLGuide2.apk

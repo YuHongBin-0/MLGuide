@@ -1,0 +1,69 @@
+<ion-header >
+  <ion-toolbar >
+    <ion-title>
+      Favourites
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- If favs empty -->
+  <div style="position: relative; height: 100%; width:100%" *ngIf="avail">
+    <div class="center">
+      <div style="display: block; text-align: center;">
+        <img style="width: 100px; background-color: #b9b9b9; " src="../../assets/heroEmpty.png">
+        <!-- https://www.nicepng.com/png/full/57-574971_masks-clipart-plain-blank-mask-template.png -->
+        <p style="color: #b9b9b9;">Add Your Heroes Here!</p>
+      </div>
+    </div>
+  </div>
+
+  <ion-card style="display: flex;" *ngFor="let crd of favHeroes" >
+    <!-- image -->
+    <div style="width: 35%">
+      <img [src]="crd.image">
+      <!-- <img src="https://firebasestorage.googleapis.com/v0/b/mlguide-ad541.appspot.com/o/hobeast.jpg?alt=media&token=7458100e-5cd7-48ee-ab0d-ccceea60161e"> -->
+    </div>
+    <!-- details -->
+    <div style="width: 65%;margin-top: 0px;">
+      <h3>{{crd.name}}</h3>
+      <!-- role -->
+      <ion-row>
+        <ion-col size="4.75">
+          <p>Role:</p>
+        </ion-col>
+        <ion-col size="7.25">
+          <p>{{crd.role}}</p>
+        </ion-col>
+      </ion-row>
+      <!-- speciality -->
+      <ion-row>
+        <ion-col size="4.75">
+          <p>Speciality:</p>
+        </ion-col>
+        <ion-col size="7.25">
+          <p>{{crd.speciality}}</p>
+        </ion-col>
+      </ion-row>
+      <!-- Cost -->
+      <ion-row>
+        <ion-col size="4.75">
+          <p>Cost:</p>
+        </ion-col>  
+        <ion-col size="7.25">
+          <p>{{crd.bp}}  {{crd.diamond}} {{crd.ticket}}</p>
+        </ion-col>
+      </ion-row>
+
+     <a style="float: right; margin: 0 8px 3px 0;" (click)="details(crd.id)"><h1>More Details</h1></a>
+ 
+    </div>
+  </ion-card>
+
+
+
+</ion-content>

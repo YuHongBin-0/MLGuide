@@ -1,0 +1,258 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{info.name}}</ion-title>
+      <ion-buttons slot="end">
+        <ion-button *ngIf="!fav" (click)="addFav(key)">
+          <ion-icon name="star-outline"></ion-icon>
+        </ion-button>
+        <ion-button *ngIf="fav" (click)="removeFav(key)">
+          <ion-icon name="star"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <!-- Poster  -->
+    <div style="background-color: white;">
+      <img class="poster" [src]="info.poster">
+    </div>
+    <!-- Segment -->
+    <ion-toolbar id="segment">
+      <ion-segment #segments (ionChange)="segmentChanged()" [(ngModel)]="segment" mode="md">
+        <ion-segment-button mode="md" id="seg-1" value="0">
+          Strategy
+        </ion-segment-button>
+        <ion-segment-button mode="md" id="seg-2" value="1">
+          Overview
+        </ion-segment-button>
+        <ion-segment-button mode="md" id="seg-3" value="2">
+          Counters
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+    <!-- Slides onwards -->
+    <ion-slides #slides (ionSlideDidChange)="slideChanged()" [options]="slideOpts">
+      <ion-slide>
+        <div class="slides">
+          <!-- Crucial Items -->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Crucial Items
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ion-row>
+              <ion-col size="4" *ngFor="let img of crucial">
+                <img class="emblem" [src]="img">
+              </ion-col>
+            </ion-row>
+          </mat-expansion-panel>
+          <!-- Mage Emblem -->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{info.firstemblem.name}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ion-row>
+              <ion-col size="4" *ngFor="let img of firstemblem">
+                <img class="emblem" [src]="img">
+              </ion-col>
+            </ion-row>
+          </mat-expansion-panel>
+          <!-- Marksman Emblem -->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{info.fsecondemblem.name}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ion-row>
+              <ion-col size="4" *ngFor="let img of secondemblem">
+                <img class="emblem"  [src]="img">
+              </ion-col>
+            </ion-row>
+          </mat-expansion-panel>
+          <!-- Battle Spell -->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Battle Spell
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ion-row>
+              <ion-col size="4" *ngFor="let img of [1,2,3,4,5,6]">
+                <img class="emblem" 
+                  src="https://lh3.googleusercontent.com/ElCqrDB8LRk7lcJY1_eAiVCoajr3dOu678UQknCSO4igZDXjio6arcUgn52pbnO5Kog">
+              </ion-col>
+            </ion-row>
+          </mat-expansion-panel>
+          <!-- Upgrade Priority -->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Upgrade Priority
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ion-row>
+              <ion-col size="4" *ngFor="let img of [1,2,3,4,5,6]">
+                <img class="emblem" 
+                  src="https://lh3.googleusercontent.com/ElCqrDB8LRk7lcJY1_eAiVCoajr3dOu678UQknCSO4igZDXjio6arcUgn52pbnO5Kog">
+              </ion-col>
+            </ion-row>
+          </mat-expansion-panel>
+          <!-- Marksman Emblem -->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Marksman Emblem
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ion-row>
+              <ion-col size="4" *ngFor="let img of [1,2,3,4,5,6]">
+                <img class="emblem" 
+                  src="https://lh3.googleusercontent.com/ElCqrDB8LRk7lcJY1_eAiVCoajr3dOu678UQknCSO4igZDXjio6arcUgn52pbnO5Kog">
+              </ion-col>
+            </ion-row>
+          </mat-expansion-panel>
+        </div>
+      </ion-slide>
+  
+      <!-- OVERVIEW -->
+      <ion-slide>
+        <div class="slides">
+          <!-- Ability Stats -->
+          <div class="card">
+            <ion-card-header>
+              <ion-card-subtitle>Ability Stats</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="4">
+                  <p>Durability</p>
+                </ion-col>
+                <ion-col size="8" class="bar">
+                  <ion-progress-bar value="{{info.durability}}"></ion-progress-bar>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="4">
+                  <p>Offence</p>
+                </ion-col>
+                <ion-col size="8" class="bar">
+                  <ion-progress-bar value="{{info.offence}}"></ion-progress-bar>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="4">
+                  <p>Skill effects</p>
+                </ion-col>
+                <ion-col size="8" class="bar">
+                  <ion-progress-bar value="{{info.skill_effect}}"></ion-progress-bar>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="4">
+                  <p>Difficulty</p>
+                </ion-col>
+                <ion-col size="8" class="bar">
+                  <ion-progress-bar value="{{info.difficulty}}"></ion-progress-bar>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </div>
+  
+          <!-- Hero's Life Story -->
+  
+          <mat-expansion-panel (click)="autoHeight()">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Life Story
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p style="text-align: center;" [innerHTML]="info.background_story"></p>
+          </mat-expansion-panel>
+          <!-- Role, Special, Cost -->
+          <div class="card">
+            <ion-row>
+              <ion-col size="5">
+                <p>Role</p>
+                <p>Speciality</p>
+                <p>Cost</p>
+              </ion-col>
+              <ion-col size="7">
+                <p>{{info.role}}</p>
+                <p>{{info.speciality}}</p>
+                <div>
+                </div>
+                <p style=" text-align: center !important;">
+                  <img style="width: 15px; display: inline-block;" src="../assets/icon/bp_icon.png">
+                  {{info.cost.bp}}
+                  <img style="width: 18px;display: inline-block;" src="../assets/icon/diamond_icon.png">
+                  {{info.cost.diamond}}
+                  <img style="width: 15px;display: inline-block;" src="../assets/icon/ticket_icon.png">
+                  {{info.cost.ticket}}
+  
+                </p>
+              </ion-col>
+            </ion-row>
+          </div>
+          <!-- Attributes -->
+          <div class="card">
+            <ion-card-header>
+              <ion-card-subtitle>Attributes</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="6">
+                  <p>Movement SPD: {{info.movement_spd}}</p>
+                  <p>Magic Power: {{info.magic_power}}</p>
+                  <p>Magic DEF: {{info.magic_def}}</p>
+                  <p>Mana: {{info.mana}}</p>
+                  <p>HP Regen: {{info.hp_regen}}</p>
+                  <p>Basic ATK Crit Rate: {{info.basic_atk_crit_rate}}</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p>Physical ATK: {{info.physical_atk}}</p>
+                  <p>Physical DEF: {{info.physical_def}}</p>
+                  <p>HP: {{info.hp}}</p>
+                  <p>Attack SPD: {{info.attack_spd}}</p>
+                  <p>Mana Regen: {{info.mana_regen}}</p>
+                  <p>Ability Crit Rate: {{info.ability_crit_rate}}</p>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </div>
+          <!-- Skills passive etc -->
+          <div class="card">
+            <ion-card-header>
+              <ion-card-subtitle>Skills</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-header>
+              <ion-card-subtitle style="text-align: left;">Chemist's Instinct</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- <iframe width="100%" height="250" [src]="vid_passive" frameborder="0"></iframe> -->
+  
+            </ion-card-content>
+          </div>
+  
+  
+        </div>
+      </ion-slide>
+  
+      <!-- Third segment -->
+      <ion-slide>
+        <div class="slides">
+        third
+      </div>
+      </ion-slide>
+    </ion-slides>
+  
+  
+  
+  </ion-content>

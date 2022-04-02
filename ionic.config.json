@@ -1,0 +1,7 @@
+{
+  "name": "MLguide",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

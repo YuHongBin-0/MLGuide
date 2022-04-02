@@ -1,0 +1,50 @@
+ion-back-button {
+    color: #CABD24;
+}
+
+ion-icon {
+    color: #CABD24;
+}
+
+
+table {
+ 
+    width: 100%;
+    color: #b9b9b9;
+    background-color: #272424;
+}
+
+td {
+    color: #b9b9b9;
+}
+
+th {
+    color: #b9b9b9;
+}
+
+mat-footer-row,
+mat-header-row,
+mat-row,
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+    border-bottom-color: #b9b9b9;
+}
+
+.mat-header-cell cdk-column-tier1 mat-column-tier1 {
+    text-align: center;
+}
+
+.mat-cell.cdk-column-tier1 {
+    text-align: center;
+}
+.mat-cell.cdk-column-tier2 {
+    text-align: center;
+}
+.mat-cell.cdk-column-tier3 {
+    text-align: center;
+}
+
+
+
+// mat-cell cdk-column-tier1 mat-column-tier1

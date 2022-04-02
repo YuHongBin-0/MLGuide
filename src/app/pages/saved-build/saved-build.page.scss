@@ -1,0 +1,29 @@
+
+ion-icon {
+    color: #CABD24;
+}
+
+ion-back-button {
+    color: #CABD24;
+}
+
+ion-item {
+    --background: #190a05;;
+    color:#b9b9b9;
+    --border-color: #464646;
+}
+
+.list-md {
+    background: #190a05;;
+    
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+  

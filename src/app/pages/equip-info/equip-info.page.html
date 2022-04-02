@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Equipment Information</ion-title>
+    <!-- <ion-buttons slot="end" (click)="close()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="close-outline" style="color: #b9b9b9;"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+<super-tabs>
+  <super-tabs-toolbar slot="top" scrollable="true" color="secondary">
+    <super-tab-button *ngFor="let t of tabs">
+      <ion-label>
+        {{ t.title }}
+      </ion-label>
+    </super-tab-button>
+  </super-tabs-toolbar>
+  <super-tabs-container>
+    <super-tab >
+      <ion-content class="ion-padding">
+        <ion-row style="justify-content: center">
+          <ion-col size="3" *ngFor="let item of attack" style="text-align: center;">
+
+            <ion-avatar id="equipment-icon" (click)="equipDet(item)">
+            <img [src]="item.equipment_pic">
+            </ion-avatar>
+            <p>{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <super-tab >
+      <ion-content class="ion-padding">
+        <ion-row style="justify-content: center">
+          <ion-col size="3" *ngFor="let item of magic" style="text-align: center;" >
+
+            <ion-avatar id="equipment-icon"  (click)="equipDet(item)">
+            <img [src]="item.equipment_pic">
+            </ion-avatar>
+            <p>{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <super-tab >
+      <ion-content class="ion-padding">
+        <ion-row style="justify-content: center">
+          <ion-col size="3" *ngFor="let item of defence" style="text-align: center;">
+
+            <ion-avatar id="equipment-icon"  (click)="equipDet(item)">
+            <img [src]="item.equipment_pic">
+            </ion-avatar>
+            <p>{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content class="ion-padding">
+        <ion-row style="justify-content: center">
+          <ion-col size="3" *ngFor="let item of movement" style="text-align: center;">
+            <ion-avatar id="equipment-icon"  (click)="equipDet(item)">
+            <img [src]="item.equipment_pic">
+            </ion-avatar>
+            <p>{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <super-tab >
+      <ion-content class="ion-padding">
+        <ion-row style="justify-content: center">
+          <ion-col size="3" *ngFor="let item of jungling" style="text-align: center;">
+
+            <ion-avatar id="equipment-icon"  (click)="equipDet(item)">
+            <img [src]="item.equipment_pic">
+            </ion-avatar>
+            <p>{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <super-tab >
+      <ion-content class="ion-padding">
+        <ion-row style="justify-content: center">
+          <ion-col size="3" *ngFor="let item of roam" style="text-align: center;">
+
+            <ion-avatar id="equipment-icon"  (click)="equipDet(item)">
+            <img [src]="item.equipment_pic">
+            </ion-avatar>
+            <p>{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+  </super-tabs-container>
+
+</super-tabs>
+
+</ion-content>

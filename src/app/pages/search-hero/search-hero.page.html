@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" ></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title>Search Hero</ion-title> -->
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar #autofocus debounce="500" (ionInput)="getItems($event)"
+    placeholder="Enter hero name/role/speciality"></ion-searchbar> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <ion-list lines="full"> -->
+
+    <ion-item *ngFor="let be of heroList" class="fadeIn" routerLink="/hero-details/{{be.key}}">
+      <ion-avatar slot="start">
+        <img
+          [src]="be.avatar">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{be.name}}</h2>
+      </ion-label>
+    </ion-item>
+
+  <!-- </ion-list> -->
+  <div id="empty" *ngIf="emptysearch">
+    <h4>Search not found :(</h4>
+  </div>
+
+</ion-content>

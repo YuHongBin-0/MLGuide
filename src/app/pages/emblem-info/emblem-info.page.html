@@ -1,0 +1,128 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Emblem Information</ion-title>
+  </ion-toolbar>
+</ion-header>
+<super-tabs>
+  <super-tabs-toolbar slot="top" scrollable="true" color="secondary">
+    <super-tab-button *ngFor="let t of tabs">
+      <ion-label>
+        {{ t.title }}
+      </ion-label>
+    </super-tab-button>
+  </super-tabs-toolbar>
+  <super-tabs-container>
+    <!-- physical -->
+    <super-tab>
+      <ion-content class="ion-padding" force-overscroll="false">
+        <ion-row style="justify-content: center">
+          <ion-col size="4" *ngFor="let item of physical" style="text-align: center;" (click)="notifications($event, item)">
+            <img [src]="item.icon">
+            <p style="margin: 0;">{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <!-- magic -->
+    <super-tab>
+      <ion-content class="ion-padding" force-overscroll="false">
+        <ion-row style="justify-content: center">
+          <ion-col size="4" *ngFor="let item of magic" style="text-align: center;" (click)="notifications($event, item)">
+
+            <img [src]="item.icon">
+            <p style="margin: 0;">{{item.name}}</p>
+        
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <!-- tank -->
+    <super-tab>
+      <ion-content class="ion-padding" force-overscroll="false">
+        <ion-row style="justify-content: center">
+          <ion-col size="4" *ngFor="let item of tank" style="text-align: center;" (click)="notifications($event, item)">
+            <img [src]="item.icon">
+            <p style="margin: 0;">{{item.name}}</p>
+         
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <!-- jungle -->
+    <super-tab>
+      <ion-content class="ion-padding" force-overscroll="false">
+        <ion-row style="justify-content: center">
+          <ion-col size="4" *ngFor="let item of jungle" style="text-align: center;" (click)="notifications($event, item)">
+            <img [src]="item.icon">
+            <p style="margin: 0;">{{item.name}}</p>
+        
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <!-- assassin -->
+    <super-tab>
+      <ion-content class="ion-padding" force-overscroll="false">
+        <ion-row style="justify-content: center">
+          <ion-col size="4" *ngFor="let item of assassin" style="text-align: center;" (click)="notifications($event, item)">
+            <img [src]="item.icon">
+            <p style="margin: 0;">{{item.name}}</p>
+    
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <!-- mage -->
+    <super-tab>
+      <ion-content class="ion-padding" force-overscroll="false">
+        <ion-row style="justify-content: center">
+          <ion-col size="4" *ngFor="let item of mage" style="text-align: center;" (click)="notifications($event, item)">
+            <img [src]="item.icon">
+            <p style="margin: 0;">{{item.name}}</p>
+
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <!-- fighter -->
+    <super-tab>
+      <ion-content class="ion-padding" force-overscroll="false" >
+        <ion-row style="justify-content: center">
+          <ion-col size="4" *ngFor="let item of fighter" style="text-align: center;" (click)="notifications($event, item)">
+            <img [src]="item.icon">
+            <p style="margin: 0;">{{item.name}}</p>
+    
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <!-- support -->
+    <super-tab>
+      <ion-content class="ion-padding" force-overscroll="false">
+        <ion-row style="justify-content: center">
+          <ion-col size="4" *ngFor="let item of support" style="text-align: center;" (click)="notifications($event, item)">
+            <img [src]="item.icon">
+            <p style="margin: 0;">{{item.name}}</p>
+    
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <!-- marksman -->
+    <super-tab>
+      <ion-content class="ion-padding" force-overscroll="false">
+        <ion-row style="justify-content: center">
+          <ion-col size="4" *ngFor="let item of marksman" style="text-align: center;" (click)="notifications($event, item)">
+            <img [src]="item.icon">
+            <p style="margin: 0;">{{item.name}}</p>
+ 
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+  </super-tabs-container>
+
+</super-tabs>

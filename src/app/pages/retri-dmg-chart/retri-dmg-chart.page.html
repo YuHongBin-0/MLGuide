@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Retribution Damage Chart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content force-overscroll="false">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>Level </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="without">
+      <th mat-header-cell *matHeaderCellDef> Without</th>
+      <td mat-cell *matCellDef="let element"> {{element.without}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="tier1">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center;"><img style="width: 40px;" src="../../../assets/icon/tier1.png"></th>
+      <td mat-cell *matCellDef="let element"> {{element.tier1}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="tier2" >
+      <th mat-header-cell *matHeaderCellDef style="text-align: center;"><img style="width: 40px;" src="../../../assets/icon/tier2.png"></th>
+      <td mat-cell *matCellDef="let element"> {{element.tier2}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tier3" >
+      <th mat-header-cell *matHeaderCellDef style="text-align: center;"><img style="width: 40px;" src="../../../assets/icon/tier3.png"> </th>
+      <td mat-cell *matCellDef="let element"> {{element.tier3}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true; back" style="background-color: #1b1b1b;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Heroes
+    </ion-title>
+    <ion-buttons routerLink="/search-hero" slot="end">
+      <ion-button><ion-icon name="search"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <div class="container" *ngIf="banner">
+    <p id="head">New Season starts in...</p>
+    <ul id="time" class="animated pulse infinite">
+      <li><span id="days"></span>Days</li>
+      <li><span id="hours"></span>Hours</li>
+      <li><span id="minutes"></span>Minutes</li>
+      <li><span id="seconds"></span>Seconds</li>
+    </ul>
+  </div>
+  <ion-slides #sliders (ionSlidesDidLoad)='slidesDidLoad(sliders)' pager='true' [options]='slideOpts'>
+
+    <ion-slide *ngFor="let sli of slide">
+      <ion-card class="slide-card" (click)="open(sli.nav)">
+        <img id="poster" [src]="sli.thumbnail" alt="">
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+<!-- changed to best practice by using array json -->
+
+
+
+<!-- List of heroes in columns -->
+  <ion-row>
+    <ion-col size="3" *ngFor="let hero of infos" routerLink="/hero-details/{{hero.key}}" (click)="clickE()">
+      <ion-avatar id="avatar">
+        <img [src]="hero.avatar">
+      </ion-avatar>
+      <p>{{hero.name}}</p>
+    </ion-col>
+  </ion-row>
+  
+
+</ion-content>
+

@@ -1,0 +1,119 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title mode="ios">Equipment Calculator</ion-title>
+    <!-- <preferences slot="end"></preferences> -->
+
+    <ion-buttons slot="end" (click)="close()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="close-outline" style="color: #b9b9b9;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<super-tabs>
+  <super-tabs-toolbar slot="top" scrollable="true" color="secondary">
+    <super-tab-button *ngFor="let t of tabs">
+      <ion-label>
+        {{ t.title }}
+      </ion-label>
+    </super-tab-button>
+  </super-tabs-toolbar>
+  <super-tabs-container>
+    <super-tab >
+      <ion-content class="ion-padding">
+        <ion-row style="justify-content: center">
+          <ion-col size="3" *ngFor="let item of attack" style="text-align: center;">
+
+            <ion-avatar id="equipment-icon" (click)="details(item.attributes, item.cost, item.name, item.equipment_pic, item.summary)">
+            <img [src]="item.equipment_pic">
+            </ion-avatar>
+            <p>{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <super-tab >
+      <ion-content class="ion-padding">
+        <ion-row style="justify-content: center">
+          <ion-col size="3" *ngFor="let item of magic" style="text-align: center;">
+
+            <ion-avatar id="equipment-icon" (click)="details(item.attributes, item.cost, item.name, item.equipment_pic, item.summary)">
+            <img [src]="item.equipment_pic">
+            </ion-avatar>
+            <p>{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <super-tab >
+      <ion-content class="ion-padding">
+        <ion-row style="justify-content: center">
+          <ion-col size="3" *ngFor="let item of defence" style="text-align: center;">
+
+            <ion-avatar id="equipment-icon" (click)="details(item.attributes, item.cost, item.name, item.equipment_pic, item.summary)">
+            <img [src]="item.equipment_pic">
+            </ion-avatar>
+            <p>{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content class="ion-padding">
+        <ion-row style="justify-content: center">
+          <ion-col size="3" *ngFor="let item of movement" style="text-align: center;">
+            <ion-avatar id="equipment-icon" (click)="details(item.attributes, item.cost, item.name, item.equipment_pic, item.summary)">
+            <img [src]="item.equipment_pic">
+            </ion-avatar>
+            <p>{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <super-tab >
+      <ion-content class="ion-padding">
+        <ion-row style="justify-content: center">
+          <ion-col size="3" *ngFor="let item of jungling" style="text-align: center;">
+
+            <ion-avatar id="equipment-icon" (click)="details(item.attributes, item.cost, item.name, item.equipment_pic, item.summary)">
+            <img [src]="item.equipment_pic">
+            </ion-avatar>
+            <p>{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+    <super-tab >
+      <ion-content class="ion-padding">
+        <ion-row style="justify-content: center">
+          <ion-col size="3" *ngFor="let item of roam" style="text-align: center;">
+
+            <ion-avatar id="equipment-icon" (click)="details(item.attributes, item.cost, item.name, item.equipment_pic, item.summary)">
+            <img [src]="item.equipment_pic">
+            </ion-avatar>
+            <p>{{item.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </super-tab>
+  </super-tabs-container>
+
+</super-tabs>
+
+<!-- <ion-footer>
+  <ion-row>
+    <ion-col size="2" *ngFor="let i of dummy" style="background-color: #190a05; text-align: center;">
+      
+      <ion-avatar id="footer-avatar">
+        <img [src]="i.img">
+      </ion-avatar>     
+    </ion-col>
+
+    <ion-col style="background-color: #190a05;">
+      <ion-button expand="full" fill="solid" color="success" (click)="updateIdea()">
+        <ion-icon name="calculator" slot="start"></ion-icon>
+        Calculate
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer> -->

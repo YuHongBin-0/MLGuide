@@ -1,0 +1,350 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{info.name}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="!fav" (click)="addFav(key)">
+        <ion-icon name="star-outline"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="fav" (click)="removeFav(key)">
+        <ion-icon name="star"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Poster  -->
+  <!-- (click)="presentModal()" -->
+  <div id="parallax" style="background-color: white;">
+    <img class="poster" [src]="info.poster">
+  </div>
+  <!-- Segment -->
+  <ion-toolbar id="segment">
+    <ion-segment #segments (ionChange)="segmentChanged()" [(ngModel)]="segment" mode="md">
+      <ion-segment-button mode="md" id="seg-1" value="0">
+        Strategy
+      </ion-segment-button>
+      <ion-segment-button mode="md" id="seg-2" value="1">
+        Overview
+      </ion-segment-button>
+      <ion-segment-button mode="md" id="seg-3" value="2">
+        Counters
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <!-- Slides onwards -->
+  <ion-slides #slides (ionSlideDidChange)="slideChanged()" [options]="slideOpts">
+    <ion-slide>
+      <div id="strategy" class="slides" *ngIf="avail">
+        <!-- Crucial Items -->
+        <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>Crucial Items</ion-card-subtitle>
+          </ion-card-header>
+          <ion-row class="strategy">
+            <ion-col size="4" *ngFor="let img of crucial">
+              <ion-avatar>
+              <img [src]="img">
+            </ion-avatar>
+            </ion-col>
+          </ion-row>
+        </div>
+        <!-- Mage Emblem -->
+        <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>{{info.firstemblem.name}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-row class="strategy">
+            <ion-col size="4" *ngFor="let img of firstemblem">
+              <img class="emblem" [src]="img">
+            </ion-col>
+          </ion-row>
+        </div>
+        <!-- Marksman Emblem -->
+        <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>{{info.fsecondemblem.name}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-row class="strategy">
+            <ion-col size="4" *ngFor="let img of secondemblem">
+              <img class="emblem" [src]="img">
+            </ion-col>
+          </ion-row>
+        </div>
+        <!-- Battle Spell -->
+        <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>Battle Spells</ion-card-subtitle>
+          </ion-card-header>
+          <ion-row class="strategy">
+            <ion-col size="4" *ngFor="let img of battlespell">
+              <img class="emblem" [src]="img">
+            </ion-col>
+          </ion-row>
+        </div>
+
+
+        <!-- Upgrade Priority -->
+        <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>Upgrade Priority</ion-card-subtitle>
+          </ion-card-header>
+          <ion-row class="strategy">
+            <ion-col size="4" *ngFor="let img of prioritys">
+              <img class="emblem" [src]="img">
+            </ion-col>
+          </ion-row>
+        </div>
+        <!-- Marksman Emblem -->
+        <!-- <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>Marksman Emblem</ion-card-subtitle>
+          </ion-card-header>
+          <ion-row class="strategy">
+            <ion-col size="4" *ngFor="let img of [1,2,3,4,5,6]">
+              <img class="emblem"
+                src="https://lh3.googleusercontent.com/ElCqrDB8LRk7lcJY1_eAiVCoajr3dOu678UQknCSO4igZDXjio6arcUgn52pbnO5Kog">
+            </ion-col>
+          </ion-row>
+        </div> -->
+      </div>
+    </ion-slide>
+
+    <!-- OVERVIEW -->
+    <ion-slide>
+      <div class="slides" *ngIf="avail">
+        <!-- Ability Stats -->
+        <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>Ability Stats</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="4">
+                <p>Durability</p>
+              </ion-col>
+              <ion-col size="8" class="bar">
+                <ion-progress-bar value="{{info.durability}}"></ion-progress-bar>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <p>Offence</p>
+              </ion-col>
+              <ion-col size="8" class="bar">
+                <ion-progress-bar value="{{info.offence}}"></ion-progress-bar>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <p>Skill effects</p>
+              </ion-col>
+              <ion-col size="8" class="bar">
+                <ion-progress-bar value="{{info.skill_effect}}"></ion-progress-bar>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <p>Difficulty</p>
+              </ion-col>
+              <ion-col size="8" class="bar">
+                <ion-progress-bar value="{{info.difficulty}}"></ion-progress-bar>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </div>
+
+        <!-- Hero's Life Story -->
+
+        <mat-expansion-panel (click)="autoHeight()">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Life Story
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p style="text-align: center;" [innerHTML]="info.background_story"></p>
+        </mat-expansion-panel>
+        <!-- Role, Special, Cost -->
+        <div class="card">
+          <ion-card-content>
+            <ion-row>
+              <ion-col id="p-padd" size="5">
+                <p>Role</p>
+                <p>Speciality</p>
+                <p>Cost</p>
+              </ion-col>
+              <ion-col id="p-padd" size="7">
+
+                <div>
+                  <p>{{info.role.role_1}}</p>
+                  <p *ngIf="info.role.role_2">{{info.role.role_2}}</p>
+                </div>
+                
+                <p>{{info.speciality}}</p>
+
+                <p style=" text-align: center !important;">
+                  <img style="width: 15px; display: inline-block;" src="../assets/icon/bp_icon.png">
+                  {{info.cost.bp}}
+                  <img style="width: 18px;display: inline-block;" src="../assets/icon/diamond_icon.png">
+                  {{info.cost.diamond}}
+                  <img style="width: 15px;display: inline-block;" src="../assets/icon/ticket_icon.png">
+                  {{info.cost.ticket}}
+                </p>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </div>
+        <!-- Attributes -->
+        <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>Attributes</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col id="p-padd" size="6">
+                <p>Movement SPD: <b>{{info.movement_spd}}</b></p>
+                <p>Magic Power: <b>{{info.magic_power}}</b></p>
+                <p>Magic DEF: <b>{{info.magic_def}}</b></p>
+                <p>Mana: <b>{{info.mana}}</b></p>
+                <p>HP Regen: <b>{{info.hp_regen}}</b></p>
+                <p>Basic ATK Crit Rate: <b>{{info.basic_atk_crit_rate}}</b></p>
+              </ion-col>
+              <ion-col id="p-padd" size="6">
+                <p>Physical ATK: <b>{{info.physical_atk}}</b></p>
+                <p>Physical DEF: <b>{{info.physical_def}}</b></p>
+                <p>HP: <b>{{info.hp}}</b></p>
+                <p>Attack SPD: <b>{{info.attack_spd}}</b></p>
+                <p>Mana Regen: <b>{{info.mana_regen}}</b></p>
+                <p>Ability Crit Rate: <b>{{info.ability_crit_rate}}</b></p>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </div>
+        <!-- Skills passive etc -->
+        <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>Skills</ion-card-subtitle>
+          </ion-card-header>
+
+          <!-- Passive -->
+          <ion-card-header id="pass-skill">
+            <ion-card-subtitle style="text-align: left; font-weight: lighter; font-size: 14px; display: flex;">
+              <p>{{info.skill.passive.name}}</p>
+
+              <div id="skills-right"> 
+                <img [src]="info.skill.passive.icon" class="small-icon" > 
+            
+            </div>
+              <p style="position: absolute; right: 0;"></p>
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content class="left">
+                <iframe  width="100%" height="200" [src]="info.skill.passive.video" frameborder="0" ></iframe>
+          
+            <p [innerHtml]="info.skill.passive.short_desc" style="text-align: center;"></p>
+            <mat-expansion-panel (click)="autoHeight()" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Full Description
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p style="text-align: center;" [innerHTML]="info.skill.passive.long_desc"></p>
+            </mat-expansion-panel>
+
+
+          </ion-card-content>
+          <!-- Skills iterate -->
+          <div *ngFor="let i of arr_skills">
+            <ion-card-header id="pass-skill">
+              <ion-card-subtitle style="text-align: left; font-weight: lighter; font-size: 14px; display: flex;">
+                <p>{{i.name}}</p>
+                <img [src]="i.icon" class="small-icon" > 
+                <div id="skills-right"> 
+                 
+                <p [innerHtml]='i.type'></p>
+              </div>
+              </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content class="left">
+                    <iframe  width="100%" height="200" [src]="i.video" frameborder="0"></iframe>
+              <p style="text-align: center;" [innerHTML]="i.short_desc"></p>
+              <mat-expansion-panel (click)="autoHeight()" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Full Description
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p style="text-align: center;" [innerHTML]="i.long_desc"></p>
+              </mat-expansion-panel>
+            </ion-card-content>
+          </div>
+        </div>
+
+
+        <!-- origin and relationship -->
+        <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>Origin and Relationship</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p [innerHtml]="info.origin_and_relationships"></p>
+          </ion-card-content>
+        </div>
+      </div>
+    </ion-slide>
+
+    <!-- Third segment -->
+    <ion-slide>
+      <div class="slides" *ngIf="avail">
+        <!-- Strong against -->
+        <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>Strong Against</ion-card-subtitle>
+          </ion-card-header>
+          <ion-row class="strategy">
+            <ion-col size="4" *ngFor="let img of strg_against" class="counter-col">
+              <ion-avatar class="str-against">
+                <img class="emblem" [src]="img.img">
+              </ion-avatar>
+              <p id="str-name">{{img.name}}</p>
+            </ion-col>
+          </ion-row>
+        </div>
+
+
+        <!-- Weak against -->
+        <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>Weak Against</ion-card-subtitle>
+          </ion-card-header>
+          <ion-row class="strategy">
+            <ion-col size="4" *ngFor="let img of wk_against" class="counter-col">
+              <ion-avatar class="wk-against">
+                <img class="emblem" [src]="img.img"></ion-avatar>
+                <p id="wk-name">{{img.name}}</p>
+            </ion-col>
+          </ion-row>
+        </div>
+
+
+        <!-- Equipment to counter -->
+        <div class="card">
+          <ion-card-header>
+            <ion-card-subtitle>Counter Equipment</ion-card-subtitle>
+          </ion-card-header>
+          <ion-row class="strategy">
+            <ion-col size="4" *ngFor="let img of ctr_eqp" class="counter-col">
+              <ion-avatar>
+                <img class="emblem" [src]="img"></ion-avatar>
+            </ion-col>
+          </ion-row>
+        </div>
+
+
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,51 @@
+
+
+<ion-content>
+
+  <div>
+    <h4>{{data.name}}</h4>
+  </div>
+
+  <div class="card">
+    <p class="center">Attributes</p>
+    <ion-card-content>
+      <ion-row>
+          <ion-col id="p-padd" size="6">
+            <p *ngIf="atrib.attack_speed > 0">Attack Speed: <b>{{atrib.attack_speed}}%</b></p>
+            <p *ngIf="atrib.cd_reduction > 0">CD Reduction: <b>{{atrib.cd_reduction}}%</b></p>
+            <p *ngIf="atrib.crit_chance > 0">Crit Chance: <b>{{atrib.crit_chance}}%</b></p>
+            <p *ngIf="atrib.crit_damage_reduction > 0">Crit Damage Reduction: <b>{{atrib.crit_damage_reduction}}%</b></p>
+            <p *ngIf="atrib.hp > 0">HP: <b>{{atrib.hp}}</b></p>
+            <p *ngIf="atrib.hp_regen > 0">HP Regen: <b>{{atrib.hp_regen}}</b></p>
+            <p *ngIf="atrib.magic_defense > 0">Magic Defence: <b>{{atrib.magic_defense}}</b></p>
+            <p *ngIf="atrib.magic_lifesteal > 0">Magic Lifesteal: <b>{{atrib.magic_lifesteal}}%</b></p>
+          </ion-col>
+          <ion-col id="p-padd" size="6">
+            <p *ngIf="atrib.magic_pen > 0">Magic Pen: <b>{{atrib.magic_pen}}</b></p>
+            <p *ngIf="atrib.magic_power > 0">Magic Power: <b>{{atrib.magic_power}}</b></p>
+            <p *ngIf="atrib.mana > 0">Mana: <b>{{atrib.mana}}</b></p>
+            <p *ngIf="atrib.mana_regen > 0">Mana Regen: <b>{{atrib.mana_regen}}</b></p>
+            <p *ngIf="atrib.movement_spd > 0">Movement Speed: <b>{{atrib.movement_spd}}%</b></p>
+            <p *ngIf="atrib.physical_atk > 0">Physical Attack: <b>{{atrib.physical_atk}}</b></p>
+            <p *ngIf="atrib.physical_def > 0">Physical Defence: <b>{{atrib.physical_def}}</b></p>
+            <p *ngIf="atrib.physical_lifesteal > 0">Physical Lifesteal: <b>{{atrib.physical_lifesteal}}%</b></p>
+            <p *ngIf="atrib.physical_pen > 0">Physical Pen: <b>{{atrib.physical_pen}}%</b></p>
+          </ion-col>
+      </ion-row>
+      </ion-card-content>
+    </div>
+
+
+  <div class="card">
+    <p class="center">Summary </p>
+  <ion-card-content>
+    <p>{{data.short}}</p>
+  </ion-card-content></div>
+
+  <div class="card">
+    <p class="center">Description</p>
+  <ion-card-content>
+   <p>{{data.summary}}</p>
+  </ion-card-content>
+</div>
+</ion-content>

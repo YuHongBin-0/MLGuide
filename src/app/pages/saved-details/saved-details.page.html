@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{data.name}}</ion-title>
+  </ion-toolbar>
+<!-- 6 avatar -->
+  <ion-toolbar>
+    <ion-row style="justify-content: center;">
+      <ion-col size="2" *ngFor="let i of dummy" style="text-align: center;">
+        <ion-avatar id="footer-avatar" (click)="presentModal(i.id)">
+          <img *ngIf="i.img" [src]="i.img">
+          <img *ngIf="!i.img" src="../../../assets/icon/add.png">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card-header>
+    <ion-card-subtitle style="text-align: center;">Total Cost: <b>{{ttCost}}</b></ion-card-subtitle>
+  </ion-card-header>
+
+  <div class="card" *ngIf="passive.length > 0">
+    <ion-card-content>
+    <ion-row>
+        <ion-col id="p-padd" size="6">
+          <p *ngIf="atk_spd > 0">Attack Speed: <b>{{atk_spd}}%</b></p>
+          <p *ngIf="cd_reduc > 0">CD Reduction: <b>{{cd_reduc}}%</b></p>
+          <p *ngIf="crit_chance > 0">Crit Chance: <b>{{crit_chance}}%</b></p>
+          <p *ngIf="crit_dmg_red > 0">Crit Damage Reduction: <b>{{crit_dmg_red}}%</b></p>
+          <p *ngIf="hp > 0">HP: <b>{{hp}}</b></p>
+          <p *ngIf="hp_regen > 0">HP Regen: <b>{{hp_regen}}</b></p>
+          <p *ngIf="magic_defence > 0">Magic Defence: <b>{{magic_defence}}</b></p>
+          <p *ngIf="magic_lifesteal > 0">Magic Lifesteal: <b>{{magic_lifesteal}}%</b></p>
+        </ion-col>
+        <ion-col id="p-padd" size="6">
+          <p *ngIf="magic_pen > 0">Magic Pen: <b>{{magic_pen}}</b></p>
+          <p *ngIf="magic_power > 0">Magic Power: <b>{{magic_power}}</b></p>
+          <p *ngIf="mana > 0">Mana: <b>{{mana}}</b></p>
+          <p *ngIf="mana_regen > 0">Mana Regen: <b>{{mana_regen}}</b></p>
+          <p *ngIf="movement_spd > 0">Movement Speed: <b>{{movement_spd}}%</b></p>
+          <p *ngIf="physical_atk > 0">Physical Attack: <b>{{physical_atk}}</b></p>
+          <p *ngIf="physical_def > 0">Physical Defence: <b>{{physical_def}}</b></p>
+          <p *ngIf="physical_life > 0">Physical Lifesteal: <b>{{physical_life}}%</b></p>
+          <p *ngIf="physical_pen > 0">Physical Pen: <b>{{physical_pen}}%</b></p>
+        </ion-col>
+    </ion-row>
+    </ion-card-content>
+  </div>
+
+  <div class="card" *ngIf="passive.length > 0" id="passive">
+    <ion-card-content>
+    <span class="pass-margin" *ngFor="let i of passive;let n = index " >
+      <p><b>#{{n+1}}</b></p>
+      <p [innerHTML]="i"></p>
+
+    </span>
+  </ion-card-content>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+    <ion-fab-button color="secondary" (click)="validSave()" [disabled]="!enable">
+      <ion-icon name="bookmark-outline" ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

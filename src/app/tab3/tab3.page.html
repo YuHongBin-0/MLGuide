@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Others
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" no-bounce>
+  <ion-card class="ion-padding" *ngFor="let re of list" (click)="navigate(re.nav)" [disabled]="!re.status">
+    <div style="width: 20%;">
+      <ion-avatar id="avatar">
+        <img [src]="re.img">
+      </ion-avatar>
+    </div>
+    <div style="margin: auto;
+ width: 80%;">
+      <h4>{{re.title}}</h4>
+    </div>
+  </ion-card>
+
+</ion-content>
+
+<!-- 
+<ion-bottom-drawer [(state)]="drawerState" (stateChange)="changedState($event)" [minimumHeight]="50" [dockedHeight]="350"
+[shouldBounce]="true" [distanceTop]="50">
+<div class="drawer-content" style="color: cornsilk;">
+  Bottom Drawer Content
+</div>
+</ion-bottom-drawer> -->

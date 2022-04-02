@@ -1,0 +1,253 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+// @import "~@angular/material/prebuilt-themes/purple-green.css";
+:root {
+  background-color: #1b1b1b;
+
+  ion-content {
+
+    --background: #190a05;
+  }
+
+
+
+  ion-toolbar {
+    --background: #1b1b1b;
+
+    ion-title {
+      color: #999999
+    }
+  }
+
+
+  ion-segment-button {
+    --color: #999999
+  }
+
+  --ion-font-family:-apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
+  'Open Sans',
+  'Helvetica Neue',
+  sans-serif;
+  font-family: var(--ion-font-family) !important;
+
+
+
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+  }
+
+  // For hero's life story color span class
+
+  .blue {
+    color: blue;
+  }
+
+  .orange {
+    color: orange;
+  }
+
+  .purple {
+    color: blueviolet;
+  }
+
+  .red {
+    color: red
+  }
+
+  .grey {
+    color: gray;
+  }
+
+  .green {
+    color: green;
+  }
+
+  .brown {
+    color: brown;
+  }
+
+  .gold {
+    color: gold;
+  }
+
+  // changed mat expansion default color
+  .mat-expansion-panel-body {
+    padding: 0 -20;
+    color: rgb(190, 189, 189);
+  }
+
+  .mat-expansion-panel-header:hover {
+    background: #272424 !important;
+  }
+
+  .mat-expansion-indicator::after {
+    color: rgb(190, 189, 189);
+  }
+
+  .mat-expansion-panel {
+    border-radius: 0 !important;
+  }
+
+  .ios {
+    ion-spinner {
+      color: azure;
+    }
+  }
+
+
+  .hero-modal .modal-wrapper {
+    height: 75%;
+    top: 25%;
+    width: 85%;
+    background: transparent;
+    position: absolute;
+
+
+    // ion-content {
+    //   --background: transparent;
+    //   height: 70%;
+    // }
+  }
+
+  ion-content.ion-bottom-drawer-scrollable-content {
+    border: 2px solid black;
+    background-color: aqua;
+    border-radius: 50px;
+  }
+
+  .contact-modal .modal-wrapper {
+
+    height: 45%;
+    top: 55%;
+    position: absolute;
+    border-radius: 15px 15px 0 0;
+    border-style: solid;
+    border-color: red;
+    border-width: 1px 0 0 0;
+  }
+
+  .mat-tab-label-content {
+    color: #999999;
+  }
+
+  .emblem-info-pop .popover-content {
+    background-color: #272424;
+
+
+  }
+
+  .popover-arrow.sc-ion-popover-ios:after {
+    background-color: #272424;
+  }
+}
+
+.emblem-info-pop {
+  --min-width: 250px;
+}
+
+.lightblue {
+  color: lightblue;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.brown {
+  color: salmon;
+}
+
+.violet {
+  color: violet;
+}
+
+.lightgreen {
+  color: yellowgreen;
+}
+
+
+.equip-details-info .modal-wrapper {
+  
+  position: absolute;
+  height: 55%;
+  top: 45%;
+  border-radius: 25px 25px 0 0;
+  border-color: #999999;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+
+  // ion-content {
+  //   --background: #020000;
+  // }
+}
+
+.swiper-pagination {
+  margin-bottom: 10px;
+}
+
+.eqp-alert {
+  .alert-wrapper {
+    background-color: #1b1b1b;
+  }
+  h2 {
+    color: #999999 !important;
+  }
+}
+
+.name-build {
+  .alert-wrapper {
+    background-color: #1b1b1b;
+  }
+  h2 {
+    color: #999999 !important;
+  }
+  input {
+    color: #999999 !important;
+  }
+}
